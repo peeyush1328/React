@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BaseHoc from "../Hoc/BaseHoc";
 
 function Functionalcomponent(prop) {
@@ -9,6 +9,15 @@ function Functionalcomponent(prop) {
   const subsfunction = () => {
     setnumber(number - 1);
   };
+  useEffect(() => {
+    console.log("component did mount?");
+  }, []);
+  useEffect(() => {
+    console.log("props");
+  }, [prop]);
+  useEffect(() => {
+    console.log("change name");
+  }, [number]);
   return (
     <div>
       <p>This is function components.</p>
